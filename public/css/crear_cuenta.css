@@ -1,0 +1,50 @@
+body{
+    background-color: #f3f5f9;
+    margin: 0;
+    color: #10265c;
+    font-family: 'Belgrano', serif;
+    /*align-items: center;*/
+    margin-left: 30%;
+}
+
+.contenedor{
+    background-color: rgb(255, 255, 255);
+    width: 400px;
+    height: 400px;
+    padding: 10px;
+    margin-top: 10%;
+}
+
+.contenedor2{
+    background-color: rgb(255, 255, 255);
+    width: 400px;
+    padding: 10px;
+    margin-top: 10%;
+}
+
+.caja_datos{
+    width: 370px;
+}
+
+button{
+    width: 370px;
+    border: none;
+}
+
+.sigPaso{
+    color: #10265c;
+    background-color: #1CCBCB;
+    border: none;
+}
+
+.plb_plomo{
+    color: dimgrey;
+    font-size: 12px;
+}
+
+.verdeTransp{
+    border-color: chartreuse;
+    border-width: 25px;
+    background-color: rgb(227, 255, 224);
+    padding: 15px;
+}
