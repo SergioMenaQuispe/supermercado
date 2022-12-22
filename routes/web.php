@@ -77,7 +77,7 @@ Route::get('/recuperar', function() {
     return view('recuperar');
 });
 
-# pagina principal iniciada seson
+# pagina principal iniciada sesion
 Route::get('/s', function() {
     return view('main_sesion');
 });

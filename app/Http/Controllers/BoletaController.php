@@ -10,13 +10,17 @@ class BoletaController extends Controller
     //
 
     public function vender(Request $request){
-        return DB::select('call crear_boleta(?,?,?,?)', 
+
+        DB::select('call crear_boleta(?,?,?,?,?)', 
             array(
                 $request->input('id_cliente'),
                 $request->input('id_producto'),
                 $request->input('descripcion'),
+                $request->input('monto'),
                 $request->input('cantidad')
             )
         );
+
+        return $request->input('id_cliente');
     }
 }

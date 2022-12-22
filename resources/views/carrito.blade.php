@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+@php
+
+    session_start();
+
+    if(!isset($_SESSION["dni"])) {
+        header("Location: /");
+        exit();
+    }
+
+@endphp
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/products.css') }}">
-    <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/carrito.js') }}"></script>
     <title>Carrito</title>
 </head>
 
 <body>
     <div class="inputB2">
+    </div>
+    <div id="id_cliente" style="visibility: hidden">
+        {{ $_SESSION['dni'] }}
     </div>
     <br>
     <H1>Carrito</H1>
@@ -41,18 +56,23 @@
     <div class="container">
         @foreach ($json as $producto)
         <div class="caja">
-            <div>
+            <div id="{{ $producto->id_producto }}">
                 <img src="img/{{ $producto->id_producto }}.jpg">
-                <P>&nbsp;&nbsp; {{ $producto->nombre }} </P><br>
-                <P style="font-size: 10px;color:rgb(95, 95, 95)"> {{ $producto->descripcion }}</P><br>
-                <p>Precio: S/{{ $producto->precio }}</p><br>
-                <div style="text-align:center">
-                    <button class="vermas" id="{{ $producto->id_producto }}">AÑADIR AL CARRITO</button><br><br>
-                </div>    
+                <P class="nombre">&nbsp;&nbsp; {{ $producto->nombre }} </P><br>
+                <P class="descripcion" style="font-size: 10px;color:rgb(95, 95, 95)"> {{ $producto->descripcion }}</P><br>
+                <p class="precio">Precio: S/{{ $producto->precio }}</p><br>
+                <button class="quitar">Quitar</button>
+                <button class="sumar">+</button>
+                <button class="restar">-</button>
+                <p class="cantidad"> {{ $producto->cantidad }} </p>                  
+                <p class="subtotal"></p>
             </div>
         </div>    
         @endforeach
     </div>
+
+    <div>Monto Total: <p id="monto_total"></p></div>
+    <button id="comprar">Comprar</button>
 </body>
 
 </html>

@@ -15,7 +15,12 @@ class CarritoController extends Controller
 
     public function newProductoCarrito(Request $request){
         DB::table('carrito')->insert(array(
-            'id_producto' => $request->input('id')
+            'id_producto' => $request->input('id'),
+            'cantidad' => 1
         ));
+    }
+
+    public function deleteProductoCarrito($id){
+        DB::delete('DELETE FROM carrito WHERE id_producto = ?', array($id));
     }
 }

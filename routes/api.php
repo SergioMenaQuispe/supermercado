@@ -48,6 +48,9 @@ Route::post('/carrito', 'CarritoController@newProductoCarrito');
 # obtener los productos agregados al carrito
 Route::get('/carrito', 'CarritoController@getCarrito');
 
+# borrar un producto del carrito
+Route::delete('/carrito/{id}', 'CarritoController@deleteProductoCarrito');
+
 # obtener todos los clientes
 Route::get('/cliente', 'ClienteController@getClientes');
 

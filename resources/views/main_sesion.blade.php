@@ -43,7 +43,7 @@
     <!-- PETER-->
     <div class="classImg3 ">
 
-        <a href="#"><img src="img/carrito.png" width="50" height="30" aling="right">Carro</a>
+        <a href="/carrito"><img src="img/carrito.png" width="50" height="30" aling="right">Carro</a>
 
 
     </div>
