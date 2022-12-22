@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
+@php
+    session_start();
+
+    $root = "/s";
+    if(!isset($_SESSION["dni"])) {
+        $root = "/";
+    }
+
+@endphp
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,10 +24,10 @@
     <div class="inputB2">
 
         <nav>
-            <a href="/" class="titulo"><img src="img/TITULOMIN.png"></a>
+            <a href="{{ $root }}" class="titulo"><img src="img/TITULOMIN.png"></a>
 
             <ul>
-                <li><a href="/">Inicio</a></li>
+                <li><a href="{{ $root }}">Inicio</a></li>
                 <li><a href="/frutas_y_verduras">Frutas y Verduras</a></li>
                 <li><a href="/panaderia_y_pasteleria">Panaderia y Pasteleria</a></li>
                 <li><a href="/carnes">Carnes</a></li>

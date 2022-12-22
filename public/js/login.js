@@ -25,13 +25,15 @@ function acceder() {
             if(ajax.responseText.trim()=="OK"){
                 //window.location.href = "inicio.php";
                 //--------Colocamos la pagina que quiere el usuario
-                window.location.href = "paginaPrincipalseccion.php";
+                window.location.href = "/s";
+                console.log("hola")
             } else {
                 contenido.innerHTML = ajax.responseText;
+                console.log("adio")
             }
         }
     }
-    ajax.open("POST", "validar_login.php");
+    ajax.open("POST", "/api/cliente");
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("email="+ usuaVal + "&contra=" + clavVal);
 };

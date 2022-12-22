@@ -16,7 +16,7 @@
 <body>   
     <div class="contenedor2">
         <div class="form">
-            <form action="fun_registrarCuenta.php" method="POST" enctype="multipart/form-data" >
+            <form action="/api/registrar" method="POST" enctype="multipart/form-data" >
                 <h2>Crear tu cuenta y contraseña</h2>
                 <p>
                     <label for="numero">Documento de identidad</label>

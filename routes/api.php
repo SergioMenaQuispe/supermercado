@@ -53,3 +53,6 @@ Route::get('/cliente', 'ClienteController@getClientes');
 
 # validar que existe
 Route::post('/cliente', 'ClienteController@validarCliente');
+
+# api de registro
+Route::post('/registrar', 'ClienteController@insertarCliente');
